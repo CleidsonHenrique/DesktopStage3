@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --ff1: 'Staatliches', sans-serif;
+  --ff2: 'Palanquin', sans-serif;
+}
+
+
+.page {
+  max-width: 38.4rem;
+  margin: 0 auto;
+}
+
+header {
+  background: #8E9AAF;
+  text-align: center;
+  height: 27.9rem;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  animation: topdown 700ms;
+}
+
+h1 {
+  background: #CBC0D3;
+  height: 4.9rem;
+  width: 100%;
+
+  font-family: var(--ff1);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4.0rem;
+
+  letter-spacing: 0.5px;
+
+  color: #FFFFFF;
+}
+
+main {
+  background: #EFF1FF;
+  text-align: center;
+
+  animation: topdown 700ms;
+}
+
+p {
+  
+  font-family: var(--ff2);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+  padding: 1.4rem 4.0rem 6.3rem;
+  
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  
+  color: #23053A;
+}
+
+.cards{
+  display: grid;
+  gap: 3.6rem;
+  padding-bottom: 6.0rem;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+  opacity: 0.4;
+}
+
+.card {
+  position: relative;
+}
+
+.card h2 {
+  position: absolute;
+  left: 21.6rem;
+  top: 1.7rem;
+
+  background: #FEEAFA;
+  width: 112px;
+  height: 35px;
+  border-radius: 2.0rem;
+
+  text-align: center;
+  padding: 1px 2.4rem;
+  display: inline-flex;
+  align-items: center;
+
+  font-family: var(--ff1);
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0.05em;
+
+  color: #4A4E69;
+
+  animation: downtop 700ms;
+}
+
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 900px) {
+
+  main {
+   width: 100vh;
+  }
+
+
+  main p {
+    display: none;
+  }
+
+  .page {
+    display: flex;
+    max-height: 72.0rem;
+    max-width: 128.0rem;
+    
+
+  }
+
+  header {
+
+  height: 72.0rem;
+  width: 37.7rem;
+    
+  }
+
+  .cards {
+
+    gap: 3.2rem;
+
+    grid-template-areas: 
+    'A B C'
+    'D B E'
+    'D F E'
+    ;
+  }
+
+  .cards .card:nth-child(1) {
+    grid-area: A;
+  }
+
+  .cards .card:nth-child(2) {
+    grid-area: B;
+  }
+
+  .cards .card:nth-child(3) {
+    grid-area: C;
+  }
+
+  .cards .card:nth-child(4) {
+    grid-area: D;
+  }
+
+  .cards .card:nth-child(6) {
+    grid-area: E;
+  }
+
+  .cards .card:nth-child(5) {
+    grid-area: F;
+  }
+
+  .cards h2 {
+    display: none;
+  }
+
+}
